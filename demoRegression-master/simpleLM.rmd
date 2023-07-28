@@ -1,7 +1,7 @@
 ---
 title: "simpleRegress"
-author: "put your name here"
-date: "Fall 2020"
+author: "Carmenvilla"
+date: "27 July 2023"
 output: html_document
 ---
 
@@ -18,15 +18,102 @@ bears$SEX<- as.factor(bears$SEX)
 bears$MONTH<- as.factor(bears$MONTH)
 ```
 
-## Model LENGTH ~ NECK  this is an example  
+## Model LENGTH ~ NECK  this is an example
+We are going to compute regression models finding one regression model that does the best job in poredicting the bear lenght and its correspondence to the bears neck size,age,head width and head lenght.
 
 ```{r}
-simp <- lm(LENGTH~NECK,data=bears)
-plot(LENGTH~NECK,data=bears)
+simp <- lm(LENGTH~HEADLEN,data=bears)
+plot(LENGTH~HEADLEN,data=bears)
 abline(simp)
 summary.lm(simp)
 ```
 
+The adjusted r square that is the largest is the best. The neck size is 0.7576
 
 ## Compare all models that predict LENGTH other than NECK. Then order them from worst to best by its value of Adjusted-Rsquared (bigger is better), or by RSE (residual standard error) where smaller is better. 
+
+```{r}
+simp <- lm(LENGTH~HEADLEN,data=bears)
+plot(LENGTH~HEADLEN,data=bears)
+abline(simp)
+summary.lm(simp)
+```
+
+The adjusted R- squared  for Head length is 0.8434
+
+```{r}
+simp <- lm(LENGTH~HEADWTH,data=bears)
+plot(LENGTH~HEADWTH,data=bears)
+abline(simp)
+summary.lm(simp)
+```
+The adjusted R squared is 0.5321 for head width
+
+```{r}
+simp <- lm(LENGTH~AGE,data=bears)
+plot(LENGTH~AGE,data=bears)
+abline(simp)
+summary.lm(simp)
+```
+The adjusted R squared for age is 0.5073
+
+```{r}
+simp <- lm(LENGTH~CHEST,data=bears)
+plot(LENGTH~CHEST,data=bears)
+abline(simp)
+summary.lm(simp)
+```
+
+The adjusted R squared for chest is 0.7869
+
+```{r}
+simp <- lm(LENGTH~WEIGHT,data=bears)
+plot(LENGTH~WEIGHT,data=bears)
+abline(simp)
+summary.lm(simp)
+```
+
+The adjusted R squared is 0.7423
+
+
+### Conclusion
+
+The question is to compare all the models and place them in order from worst to best based off their value of Adjusted R -squared. Based of the list I have provided of R-squared values down below you can view that the Head Length is the best.
+
+
+Age:                0.5073
+
+Head width:         0.5321 
+
+Weight:             0.7423
+
+Neck:               0.7476
+
+Chest:              0.7869
+
+Head Length:        0.8434
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
