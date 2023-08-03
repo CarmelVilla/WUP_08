@@ -28,7 +28,7 @@ abline(simp)
 summary.lm(simp)
 ```
 
-The adjusted r square that is the largest is the best. The neck size is 0.7576
+The adjusted r square that is the largest is the best. The adjusted r square is 0.8463
 
 ## Compare all models that predict LENGTH other than NECK. Then order them from worst to best by its value of Adjusted-Rsquared (bigger is better), or by RSE (residual standard error) where smaller is better. 
 
